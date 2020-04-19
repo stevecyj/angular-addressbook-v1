@@ -1,0 +1,80 @@
+<div class="home-page" *mobxAutorun>
+  <h1 class="text-center">Address Book</h1>
+  <button
+    type="button"
+    class="btn btn-primary"
+    (click)="openModal(addTemplate)"
+  >
+    Add Contact
+  </button>
+  <div class="table-container">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Address</th>
+          <th>Phone</th>
+          <th>Age</th>
+          <th>Email</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let c of store.contacts">
+          <td>{{ c.firstName }}</td>
+          <td>{{ c.lastName }}</td>
+          <td>
+            {{ c.addressLineOne }}, {{ c.city }},
+            {{ c.country }}
+          </td>
+          <td>{{ c.phone }}</td>
+          <td>{{ c.age }}</td>
+          <td>{{ c.email }}</td>
+          <td>
+            <button
+              type="button"
+              class="btn btn-primary"
+              (click)="openEditModal(editTemplate, c)"
+            >
+              Edit
+            </button>
+          </td>
+          <td>
+            <button
+              type="button"
+              class="btn btn-primary"
+              (click)="deleteContact(c.id)"
+            >
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<ng-template #addTemplate>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Add Contact</h4>
+  </div>
+  <div class="modal-body">
+    <app-contact-form
+      (contactEdited)="closeModal()"
+      [edit]="false"
+    ></app-contact-form>
+  </div>
+</ng-template>
+<ng-template #editTemplate>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Edit Contact</h4>
+  </div>
+  <div class="modal-body">
+    <app-contact-form
+      (contactEdited)="closeModal()"
+      [edit]="true"
+      [contact]="selectedContact"
+    ></app-contact-form>
+  </div>
+</ng-template>
