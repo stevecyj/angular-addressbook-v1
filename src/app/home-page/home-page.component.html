@@ -11,27 +11,20 @@
     <table class="table">
       <thead>
         <tr>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Address</th>
-          <th>Phone</th>
-          <th>Age</th>
-          <th>Email</th>
-          <th></th>
-          <th></th>
+          <th>姓名</th>
+          <th>電話</th>
+          <th>電子信箱</th>
+          <th>地址</th>
+          <th>操作</th>
+          <th>動作</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let c of store.contacts">
-          <td>{{ c.firstName }}</td>
-          <td>{{ c.lastName }}</td>
-          <td>
-            {{ c.addressLineOne }}, {{ c.city }},
-            {{ c.country }}
-          </td>
+          <td>{{ c.name }}</td>
           <td>{{ c.phone }}</td>
-          <td>{{ c.age }}</td>
           <td>{{ c.email }}</td>
+          <td>{{ c.address }}</td>
           <td>
             <button
               type="button"

@@ -7,15 +7,15 @@ import { environment } from 'src/environments/environment';
 export class ContactsService {
   constructor(private http: HttpClient) {}
   getContacts() {
-    return this.http.get(`${environment.apiUrl}/contacts`);
+    return this.http.get(`${environment.apiUrl}`);
   }
   addContact(data) {
-    return this.http.post(`${environment.apiUrl}/contacts`, data);
+    return this.http.post(`${environment.apiUrl}/new`, data);
   }
   editContact(data) {
-    return this.http.put(`${environment.apiUrl}/contacts/${data.id}`, data);
+    return this.http.put(`${environment.apiUrl}/edit/${data.id}`, data);
   }
   deleteContact(id) {
-    return this.http.delete(`${environment.apiUrl}/contacts/${id}`);
+    return this.http.delete(`${environment.apiUrl}/delete/${id}`);
   }
 }
