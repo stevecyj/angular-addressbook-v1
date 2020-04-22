@@ -1,11 +1,11 @@
 <div class="home-page" *mobxAutorun>
-  <h1 class="text-center">Address Book</h1>
+  <h1 class="text-center">連絡資訊</h1>
   <button
     type="button"
     class="btn btn-primary"
     (click)="openModal(addTemplate)"
   >
-    Add Contact
+    新增連絡人
   </button>
   <div class="table-container">
     <table class="table">
@@ -31,7 +31,7 @@
               class="btn btn-primary"
               (click)="openEditModal(editTemplate, c)"
             >
-              Edit
+              編輯
             </button>
           </td>
           <td>
@@ -40,7 +40,7 @@
               class="btn btn-primary"
               (click)="deleteContact(c.id)"
             >
-              Delete
+              刪除
             </button>
           </td>
         </tr>
@@ -50,7 +50,7 @@
 </div>
 <ng-template #addTemplate>
   <div class="modal-header">
-    <h4 class="modal-title pull-left">Add Contact</h4>
+    <h4 class="modal-title pull-left">新增連絡人</h4>
   </div>
   <div class="modal-body">
     <app-contact-form
@@ -61,7 +61,7 @@
 </ng-template>
 <ng-template #editTemplate>
   <div class="modal-header">
-    <h4 class="modal-title pull-left">Edit Contact</h4>
+    <h4 class="modal-title pull-left">編輯連絡人</h4>
   </div>
   <div class="modal-body">
     <app-contact-form
