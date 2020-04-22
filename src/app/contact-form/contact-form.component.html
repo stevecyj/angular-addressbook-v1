@@ -156,7 +156,6 @@
       name="age"
       [(ngModel)]="contactData.age"
       required
-      [range]="[0, 200]"
     />
     <div *ngIf="age?.invalid && (age.dirty || age.touched)">
       <div *ngIf="age.errors.required">
@@ -177,7 +176,6 @@
       name="email"
       [(ngModel)]="contactData.email"
       required
-      email
     />
     <div *ngIf="email?.invalid && (email.dirty || email.touched)">
       <div *ngIf="email.errors.required">
