@@ -101,159 +101,95 @@
       </div>
     </div>
 
+    <div class="row">
+      <div class="col">
+        <div class="form-group">
+          <label>居住城市</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="居住城市"
+            #city="ngModel"
+            name="city"
+            [(ngModel)]="contactData.city"
+            required
+          />
+          <div *ngIf="city.invalid && (city.dirty || city.touched)">
+            <div *ngIf="city.errors.required">
+              請填寫居住城市
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-group">
+          <label>鄉鎮市區</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="鄉鎮市區"
+            #township="ngModel"
+            name="township"
+            [(ngModel)]="contactData.township"
+            required
+          />
+          <div *ngIf="township.invalid && (township.dirty || township.touched)">
+            <div *ngIf="township.errors.required">
+              請填寫鄉鎮市區
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-group">
+          <label>郵遞區號</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="郵遞區號"
+            #postcode="ngModel"
+            name="postcode"
+            [(ngModel)]="contactData.postcode"
+            required
+          />
+          <div *ngIf="postcode.invalid && (postcode.dirty || postcode.touched)">
+            <div *ngIf="postcode.errors.required">
+              請填寫郵遞區號
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="form-group">
-      <label>Address Line 1</label>
+      <label>詳細地址</label>
       <input
         type="text"
         class="form-control"
-        placeholder="Address Line 1"
-        #addressLineOne="ngModel"
-        name="addressLineOne"
-        [(ngModel)]="contactData.addressLineOne"
+        placeholder="詳細地址"
+        #address="ngModel"
+        name="address"
+        [(ngModel)]="contactData.address"
         required
       />
-      <div
-        *ngIf="
-          addressLineOne?.invalid &&
-          (addressLineOne.dirty || addressLineOne.touched)
-        "
-      >
-        <div *ngIf="addressLineOne.errors.required">
-          Address line 1 is required.
+      <div *ngIf="address?.invalid && (address.dirty || address.touched)">
+        <div *ngIf="address.errors.required">
+          請填寫詳細地址
         </div>
       </div>
     </div>
     <div class="form-group">
-      <label>Address Line 2</label>
+      <label>備註</label>
       <input
         type="text"
         class="form-control"
-        placeholder="Address Line 2"
-        #addressLineTwo="ngModel"
-        name="addressLineTwo"
-        [(ngModel)]="contactData.addressLineTwo"
+        placeholder="備註"
+        #notes="ngModel"
+        name="notes"
+        [(ngModel)]="contactData.notes"
       />
     </div>
-    <div class="form-group">
-      <label>City</label>
-      <input
-        type="text"
-        class="form-control"
-        placeholder="City"
-        #city="ngModel"
-        name="city"
-        [(ngModel)]="contactData.city"
-        required
-      />
-      <div *ngIf="city?.invalid && (city.dirty || city.touched)">
-        <div *ngIf="city.errors.required">
-          City is required.
-        </div>
-        <div *ngIf="city.invalid">
-          City is invalid.
-        </div>
-      </div>
-    </div>
-    <div class="form-group">
-      <label>Country</label>
-      <select
-        class="form-control"
-        #country="ngModel"
-        name="country"
-        [(ngModel)]="contactData.country"
-        required
-      >
-        <option *ngFor="let c of countries" [value]="c.name">
-          {{ c.name }}
-        </option>
-      </select>
-      <div *ngIf="country?.invalid && (country.dirty || country.touched)">
-        <div *ngIf="country.errors.required">
-          Country is required.
-        </div>
-      </div>
-    </div>
-    <div class="form-group">
-      <label>Postal Code</label>
-      <input
-        type="text"
-        class="form-control"
-        placeholder="Postal Code"
-        #postalCode="ngModel"
-        name="postalCode"
-        [(ngModel)]="contactData.postalCode"
-        required
-        [pattern]="getPostalCodeRegex()"
-      />
-      <div
-        *ngIf="postalCode?.invalid && (postalCode.dirty || postalCode.touched)"
-      >
-        <div *ngIf="postalCode.errors.required">
-          Postal code is required.
-        </div>
-        <div *ngIf="postalCode.invalid">
-          Postal code is invalid.
-        </div>
-      </div>
-    </div>
-    <div class="form-group">
-      <label>Phone</label>
-      <input
-        type="text"
-        class="form-control"
-        placeholder="Phone"
-        #phone="ngModel"
-        name="phone"
-        [(ngModel)]="contactData.phone"
-        required
-        [pattern]="getPhoneRegex()"
-      />
-      <div *ngIf="phone?.invalid && (phone.dirty || phone.touched)">
-        <div *ngIf="phone.errors.required">
-          Phone is required.
-        </div>
-      </div>
-    </div>
-    <div class="form-group">
-      <label>Age</label>
-      <input
-        type="text"
-        class="form-control"
-        placeholder="Age"
-        #age="ngModel"
-        name="age"
-        [(ngModel)]="contactData.age"
-        required
-      />
-      <div *ngIf="age?.invalid && (age.dirty || age.touched)">
-        <div *ngIf="age.errors.required">
-          Age is required.
-        </div>
-        <div *ngIf="age.invalid">
-          Age must be between 0 and 200.
-        </div>
-      </div>
-    </div>
-    <div class="form-group">
-      <label>Email</label>
-      <input
-        type="text"
-        class="form-control"
-        placeholder="Email"
-        #email="ngModel"
-        name="email"
-        [(ngModel)]="contactData.email"
-        required
-      />
-      <div *ngIf="email?.invalid && (email.dirty || email.touched)">
-        <div *ngIf="email.errors.required">
-          Email is required.
-        </div>
-        <div *ngIf="email.invalid">
-          Email is invalid.
-        </div>
-      </div>
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+
+    <button type="submit" class="btn btn-primary">儲存</button>
   </form>
 </div>
