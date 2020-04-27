@@ -13,10 +13,8 @@
             [(ngModel)]="contactData.name"
             required
           />
-          <div
-            *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)"
-          >
-            <div *ngIf="firstName.errors.required">
+          <div *ngIf="name.invalid && (name.dirty || name.touched)">
+            <div *ngIf="name.errors.required">
               請填寫中文姓名
             </div>
           </div>
@@ -24,60 +22,85 @@
       </div>
       <div class="col">
         <div class="form-group">
-          <label>First Name</label>
+          <label>英文姓名</label>
           <input
             type="text"
             class="form-control"
-            placeholder="First Name"
-            #firstName="ngModel"
-            name="firstName"
-            [(ngModel)]="contactData.firstName"
+            placeholder="英文姓名"
+            #ename="ngModel"
+            name="ename"
+            [(ngModel)]="contactData.ename"
             required
           />
-          <div
-            *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)"
-          >
-            <div *ngIf="firstName.errors.required">
-              First Name is required.
+          <div *ngIf="ename.invalid && (ename.dirty || ename.touched)">
+            <div *ngIf="ename.errors.required">
+              請填寫英文姓名
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="form-group">
-      <label>First Name</label>
-      <input
-        type="text"
-        class="form-control"
-        placeholder="First Name"
-        #firstName="ngModel"
-        name="firstName"
-        [(ngModel)]="contactData.firstName"
-        required
-      />
-      <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)">
-        <div *ngIf="firstName.errors.required">
-          First Name is required.
+
+    <div class="row">
+      <div class="col">
+        <div class="form-group">
+          <label>電話</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="電話"
+            #phone="ngModel"
+            name="phone"
+            [(ngModel)]="contactData.phone"
+            required
+          />
+          <div *ngIf="phone.invalid && (phone.dirty || phone.touched)">
+            <div *ngIf="phone.errors.required">
+              請填寫電話
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-group">
+          <label>電子信箱</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="name@example.com"
+            #email="ngModel"
+            name="email"
+            [(ngModel)]="contactData.email"
+            required
+          />
+          <div *ngIf="email.invalid && (email.dirty || email.touched)">
+            <div *ngIf="email.errors.required">
+              請填寫電子信箱
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-group">
+          <label>性別</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="性別"
+            #sex="ngModel"
+            name="sex"
+            [(ngModel)]="contactData.sex"
+            required
+          />
+          <div *ngIf="sex.invalid && (sex.dirty || sex.touched)">
+            <div *ngIf="sex.errors.required">
+              請填寫性別
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <div class="form-group">
-      <label>Last Name</label>
-      <input
-        type="text"
-        class="form-control"
-        placeholder="Last Name"
-        #lastName="ngModel"
-        name="lastName"
-        [(ngModel)]="contactData.lastName"
-        required
-      />
-      <div *ngIf="lastName?.invalid && (lastName.dirty || lastName.touched)">
-        <div *ngIf="lastName.errors.required">
-          Last Name is required.
-        </div>
-      </div>
-    </div>
+
     <div class="form-group">
       <label>Address Line 1</label>
       <input

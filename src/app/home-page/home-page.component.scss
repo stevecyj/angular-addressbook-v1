@@ -1,6 +1,18 @@
 .home-page {
   padding: 20px;
 }
+
 .table-container {
   margin-top: 20px;
+}
+
+.pull-right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+@media (min-width: 576px) {
+  .modal-dialog {
+    max-width: 60%;
+  }
 }

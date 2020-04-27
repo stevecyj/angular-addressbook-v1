@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://laravel.crud.nctu.me/api',
+  apiUrl: 'http://laravelgcp.crud.nctu.me/api',
 };
 
 /*

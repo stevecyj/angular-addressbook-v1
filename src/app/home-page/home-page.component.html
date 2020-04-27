@@ -1,12 +1,14 @@
 <div class="home-page" *mobxAutorun>
   <h1 class="text-center">連絡資訊</h1>
-  <button
-    type="button"
-    class="btn btn-primary"
-    (click)="openModal(addTemplate)"
-  >
-    新增連絡人
-  </button>
+  <div class="pull-right">
+    <button
+      type="button"
+      class="btn btn-danger"
+      (click)="openModal(addTemplate)"
+    >
+      新增連絡人
+    </button>
+  </div>
   <div class="table-container">
     <table class="table">
       <thead>
