@@ -1,4 +1,4 @@
-import { Component, OnInit, TemplateRef } from '@angular/core';
+import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { ContactsService } from '../contacts.service';
 import { contactStore } from '../contact-store';
@@ -13,6 +13,7 @@ export class HomePageComponent implements OnInit {
   edit: boolean;
   contacts: any[] = [];
   selectedContact: any = <any>{};
+  // @ViewChild('closebutton') closebutton;
   constructor(
     private modalService: BsModalService,
     private contactsService: ContactsService

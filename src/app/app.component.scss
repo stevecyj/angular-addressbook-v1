@@ -1,0 +1,21 @@
+@media (min-width: 992px) {
+  .navbar-expand-lg .navbar-collapse {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+
+    justify-content: flex-end;
+  }
+}
+
+.bg-light {
+  background: linear-gradient(145deg, #0d47a1, #42a5f5);
+}
+
+.navbar-brand,
+.navbar-light .navbar-nav .active > .nav-link {
+  color: #fff;
+}
+
+.fc {
+  color: #1976d2;
+}

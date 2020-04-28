@@ -1,22 +1,38 @@
-import { Component, OnInit, Input, Output, SimpleChanges } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Input,
+  Output,
+  SimpleChanges,
+  ViewChild,
+} from '@angular/core';
 import { COUNTRIES } from '../exports';
 import { contactStore } from '../contact-store';
 import { EventEmitter } from '@angular/core';
 import { ContactsService } from '../contacts.service';
 import { NgForm } from '@angular/forms';
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 @Component({
   selector: 'app-contact-form',
   templateUrl: './contact-form.component.html',
   styleUrls: ['./contact-form.component.scss'],
 })
 export class ContactFormComponent implements OnInit {
+  modalRef: BsModalRef;
   contactData: any = <any>{};
   countries = COUNTRIES;
   store = contactStore;
+  selectedContact: any = <any>{};
+  @ViewChild('closebutton') closebutton;
+
   @Input('edit') edit: boolean;
   @Input('contact') contact: any = <any>{};
   @Output('contactEdited') contactEdited = new EventEmitter();
-  constructor(private contactsService: ContactsService) {}
+  @Output() saveDone: EventEmitter<any> = new EventEmitter<any>();
+  constructor(
+    private contactsService: ContactsService,
+    private bsModalService: BsModalService
+  ) {}
   ngOnInit() {}
   ngOnChanges(changes: SimpleChanges) {
     if (this.contact) {
@@ -51,6 +67,7 @@ export class ContactFormComponent implements OnInit {
       });
     }
   }
+
   getContacts() {
     this.contactsService.getContacts().subscribe((res) => {
       this.store.setContacts(res);

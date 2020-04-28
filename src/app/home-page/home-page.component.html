@@ -1,5 +1,5 @@
 <div class="home-page" *mobxAutorun>
-  <h1 class="text-center">連絡資訊</h1>
+  <h1 class="text-center fc">連絡資訊</h1>
   <div class="pull-right">
     <button
       type="button"
@@ -30,7 +30,7 @@
           <td>
             <button
               type="button"
-              class="btn btn-primary"
+              class="btn btn-danger"
               (click)="openEditModal(editTemplate, c)"
             >
               編輯
@@ -39,7 +39,7 @@
           <td>
             <button
               type="button"
-              class="btn btn-primary"
+              class="btn btn-danger"
               (click)="deleteContact(c.id)"
             >
               刪除
@@ -53,6 +53,15 @@
 <ng-template #addTemplate>
   <div class="modal-header">
     <h4 class="modal-title pull-left">新增連絡人</h4>
+    <button
+      type="button"
+      #closebutton
+      class="close"
+      data-dismiss="modal"
+      (click)="closeModal()"
+    >
+      &times;
+    </button>
   </div>
   <div class="modal-body">
     <app-contact-form
@@ -64,6 +73,15 @@
 <ng-template #editTemplate>
   <div class="modal-header">
     <h4 class="modal-title pull-left">編輯連絡人</h4>
+    <button
+      type="button"
+      #closebutton
+      class="close"
+      data-dismiss="modal"
+      (click)="closeModal()"
+    >
+      &times;
+    </button>
   </div>
   <div class="modal-body">
     <app-contact-form
