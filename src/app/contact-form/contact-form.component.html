@@ -14,7 +14,7 @@
             required
           />
           <div *ngIf="name.invalid && (name.dirty || name.touched)">
-            <div *ngIf="name.errors.required">
+            <div *ngIf="name.errors.required" style="color: #dc3545;">
               請填寫中文姓名
             </div>
           </div>
@@ -33,7 +33,7 @@
             required
           />
           <div *ngIf="ename.invalid && (ename.dirty || ename.touched)">
-            <div *ngIf="ename.errors.required">
+            <div *ngIf="ename.errors.required" style="color: #dc3545;">
               請填寫英文姓名
             </div>
           </div>
@@ -55,7 +55,7 @@
             required
           />
           <div *ngIf="phone.invalid && (phone.dirty || phone.touched)">
-            <div *ngIf="phone.errors.required">
+            <div *ngIf="phone.errors.required" style="color: #dc3545;">
               請填寫電話
             </div>
           </div>
@@ -74,7 +74,7 @@
             required
           />
           <div *ngIf="email.invalid && (email.dirty || email.touched)">
-            <div *ngIf="email.errors.required">
+            <div *ngIf="email.errors.required" style="color: #dc3545;">
               請填寫電子信箱
             </div>
           </div>
@@ -93,7 +93,7 @@
             required
           />
           <div *ngIf="sex.invalid && (sex.dirty || sex.touched)">
-            <div *ngIf="sex.errors.required">
+            <div *ngIf="sex.errors.required" style="color: #dc3545;">
               請填寫性別
             </div>
           </div>
@@ -115,7 +115,7 @@
             required
           />
           <div *ngIf="city.invalid && (city.dirty || city.touched)">
-            <div *ngIf="city.errors.required">
+            <div *ngIf="city.errors.required" style="color: #dc3545;">
               請填寫居住城市
             </div>
           </div>
@@ -134,7 +134,7 @@
             required
           />
           <div *ngIf="township.invalid && (township.dirty || township.touched)">
-            <div *ngIf="township.errors.required">
+            <div *ngIf="township.errors.required" style="color: #dc3545;">
               請填寫鄉鎮市區
             </div>
           </div>
@@ -153,7 +153,7 @@
             required
           />
           <div *ngIf="postcode.invalid && (postcode.dirty || postcode.touched)">
-            <div *ngIf="postcode.errors.required">
+            <div *ngIf="postcode.errors.required" style="color: #dc3545;">
               請填寫郵遞區號
             </div>
           </div>
@@ -173,7 +173,7 @@
         required
       />
       <div *ngIf="address?.invalid && (address.dirty || address.touched)">
-        <div *ngIf="address.errors.required">
+        <div *ngIf="address.errors.required" style="color: #dc3545;">
           請填寫詳細地址
         </div>
       </div>
